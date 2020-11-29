@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>다쿤</title>
+    <style>
+      .editor {
+        height: 40vh;
+        width: 80vw;
+
+        border: groove;
+        padding: 5px;
+
+        font-size: 22px;
+
+        text-decoration: none;
+      }
+      button {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>KoLang JS Engine Beta</h1>
+    <textarea spellcheck="false" class="before editor">
+i를 5로 정의
+10을 i에 대입</textarea
+    >
+    <br />
+    <button onclick="parse();">
+      빌드 시작
+    </button>
+    <button
+      onclick="
+        document.getElementsByClassName('after')[0].select();
+        document.execCommand('copy');
+      "
+    >
+      결과 복사
+    </button>
+    <button
+      onclick="parse(); eval(document.getElementsByClassName('after')[0].value);"
+    >
+      빌드 후 실행
+    </button>
+    <br />
+    <textarea class="after editor" spellcheck="false">
+Start building to see result.</textarea
+    >
+  </body>
+  <script src="script/build.js"></script>
+</html>
